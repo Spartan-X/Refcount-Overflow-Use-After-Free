@@ -12,9 +12,13 @@ If a process causes the kernel to leak 0x100000000 references to the same object
 The outline of the steps that to be executed by the exploit code is as follows:
 
 1.Hold a (legitimate) reference to a key object
-2.verflow the same object’s usage
+
+2.Overflow the same object’s usage
+
 3.Get the keyring object freed
+
 4.Allocate a different kernel object from user-space, with a user-controlled content, over the same memory previously used by the freed keyring object
+
 5.Use the reference to the old key object and trigger code execution
 
 Video of the exploit:https://drive.google.com/file/d/1Iu_--ifK2GQXrlIS8DmyJfQiM40xox93/view?usp=sharing
